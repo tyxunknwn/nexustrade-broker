@@ -25,17 +25,18 @@
                         <li><a href="#services" class="nav-link">Services</a></li>
                         <li><a href="#features" class="nav-link">Features</a></li>
                         <li><a href="#markets" class="nav-link">Markets</a></li>
+                        <li><a href="#admin" class="nav-link admin-link" id="adminNav" style="display:none;">Dashboard</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="header-buttons">
-                    <a href="#" class="btn btn-outline" onclick="openModal('loginModal'); return false;">Login</a>
-                    <a href="#" class="btn btn-primary" onclick="openModal('registerModal'); return false;">Get Started</a>
+                    <span id="userGreeting" style="display:none; margin-right:10px; color:var(--accent);"></span>
+                    <a href="#" class="btn btn-outline" id="loginBtn" onclick="openModal('loginModal'); return false;">Login</a>
+                    <a href="#" class="btn btn-primary" id="registerBtn" onclick="openModal('registerModal'); return false;">Get Started</a>
+                    <a href="#" class="btn btn-outline" id="logoutBtn" onclick="handleLogout(); return false;" style="display:none;">Logout</a>
                 </div>
                 <button class="mobile-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -45,53 +46,22 @@
     <div class="market-ticker">
         <div class="ticker-wrap">
             <div class="ticker">
-                <div class="ticker-item">
-                    <span class="ticker-symbol">TSLA</span>
-                    <span class="ticker-price">$412.34</span>
-                    <span class="ticker-change positive">+3.45%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">SPACE</span>
-                    <span class="ticker-price">$156.78</span>
-                    <span class="ticker-change positive">+2.89%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">DOGE</span>
-                    <span class="ticker-price">$0.1234</span>
-                    <span class="ticker-change positive">+5.67%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">XRP</span>
-                    <span class="ticker-price">$0.5678</span>
-                    <span class="ticker-change negative">-1.23%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">BTC</span>
-                    <span class="ticker-price">$67,234.56</span>
-                    <span class="ticker-change positive">+2.34%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">ETH</span>
-                    <span class="ticker-price">$3,456.78</span>
-                    <span class="ticker-change positive">+1.89%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">SPACE</span>
-                    <span class="ticker-price">$156.78</span>
-                    <span class="ticker-change positive">+2.89%</span>
-                </div>
-                <div class="ticker-item">
-                    <span class="ticker-symbol">TSLA</span>
-                    <span class="ticker-price">$412.34</span>
-                    <span class="ticker-change positive">+3.45%</span>
-                </div>
+                <div class="ticker-item"><span class="ticker-symbol">TSLA</span><span class="ticker-price">$412.34</span><span class="ticker-change positive">+3.45%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">SPACE</span><span class="ticker-price">$156.78</span><span class="ticker-change positive">+2.89%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">DOGE</span><span class="ticker-price">$0.1234</span><span class="ticker-change positive">+5.67%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">XRP</span><span class="ticker-price">$0.5678</span><span class="ticker-change negative">-1.23%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$67,234.56</span><span class="ticker-change positive">+2.34%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,456.78</span><span class="ticker-change positive">+1.89%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">SPACE</span><span class="ticker-price">$156.78</span><span class="ticker-change positive">+2.89%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">TSLA</span><span class="ticker-price">$412.34</span><span class="ticker-change positive">+3.45%</span></div>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Elon Musk Background -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
+        <div class="hero-elon-bg"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
@@ -106,7 +76,7 @@
                     aerospace & AI stocks with zero commissions and real-time insights.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#register" class="btn btn-primary btn-lg">
+                    <a href="#" class="btn btn-primary btn-lg" onclick="openModal('registerModal'); return false;">
                         <i class="fas fa-rocket"></i> Start Trading
                     </a>
                     <a href="#demo" class="btn btn-outline btn-lg">
@@ -114,56 +84,72 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="250">0</span><span class="stat-suffix">K+</span>
-                        <span class="stat-label">Active Investors</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="15">0</span><span class="stat-suffix">B+</span>
-                        <span class="stat-label">Assets Traded</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="180">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Countries</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
-                        <span class="stat-label">Uptime</span>
-                    </div>
+                    <div class="stat-item"><span class="stat-number" data-count="250">0</span><span class="stat-suffix">K+</span><span class="stat-label">Active Investors</span></div>
+                    <div class="stat-item"><span class="stat-number" data-count="15">0</span><span class="stat-suffix">B+</span><span class="stat-label">Assets Traded</span></div>
+                    <div class="stat-item"><span class="stat-number" data-count="180">0</span><span class="stat-suffix">+</span><span class="stat-label">Countries</span></div>
+                    <div class="stat-item"><span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span><span class="stat-label">Uptime</span></div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="chart-container">
                     <div class="chart-header">
-                        <div class="chart-title">
-                            <span class="chart-icon"><i class="fas fa-rocket"></i></span>
-                            SpaceX & Tesla Portfolio
-                        </div>
-                        <div class="chart-legend">
-                            <span class="legend-item"><span class="legend-dot gold"></span> TSLA</span>
-                            <span class="legend-item"><span class="legend-dot purple"></span> SPACE</span>
-                        </div>
+                        <div class="chart-title"><span class="chart-icon"><i class="fas fa-rocket"></i></span>SpaceX & Tesla Portfolio</div>
+                        <div class="chart-legend"><span class="legend-item"><span class="legend-dot gold"></span> TSLA</span><span class="legend-item"><span class="legend-dot purple"></span> SPACE</span></div>
                     </div>
                     <div class="chart-area">
                         <svg class="chart-svg" viewBox="0 0 500 200">
-                            <defs>
-                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#f0b90b;stop-opacity:0.3" />
-                                    <stop offset="100%" style="stop-color:#f0b90b;stop-opacity:0" />
-                                </linearGradient>
-                            </defs>
+                            <defs><linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f0b90b;stop-opacity:0.3" /><stop offset="100%" style="stop-color:#f0b90b;stop-opacity:0" /></linearGradient></defs>
                             <path class="chart-line" d="M0,150 Q50,140 100,120 T200,100 T300,80 T400,60 T500,40" fill="none" stroke="#f0b90b" stroke-width="3"/>
                             <path class="chart-area-fill" d="M0,150 Q50,140 100,120 T200,100 T300,80 T400,60 T500,40 L500,200 L0,200 Z" fill="url(#chartGradient)"/>
                             <path class="chart-line-2" d="M0,160 Q50,155 100,145 T200,130 T300,115 T400,95 T500,75" fill="none" stroke="#8b5cf6" stroke-width="2"/>
                         </svg>
                     </div>
-                    <div class="chart-numbers">
-                        <span>$0</span>
-                        <span>$25K</span>
-                        <span>$50K</span>
-                        <span>$75K</span>
-                        <span>$100K</span>
-                    </div>
+                    <div class="chart-numbers"><span>$0</span><span>$25K</span><span>$50K</span><span>$75K</span><span>$100K</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section (Hidden by default) -->
+    <section id="admin" class="admin-dashboard" style="display:none;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-crown"></i> Admin Dashboard</span>
+                <h2 class="section-title">Welcome, <span id="adminName">Trader</span>!</h2>
+            </div>
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <div class="admin-card-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Account Balance</h3>
+                    <p class="admin-balance">$125,430.00</p>
+                    <span class="admin-change positive">+12.5% today</span>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Total Profit</h3>
+                    <p class="admin-balance">$45,230.00</p>
+                    <span class="admin-change positive">+8.2% this month</span>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-card-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Total Trades</h3>
+                    <p class="admin-balance">1,247</p>
+                    <span class="admin-change">Today: 23 trades</span>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-card-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Crypto Holdings</h3>
+                    <p class="admin-balance">$52,340.00</p>
+                    <span class="admin-change positive">BTC, ETH, DOGE</span>
+                </div>
+            </div>
+            <div class="admin-actions">
+                <h3>Quick Actions</h3>
+                <div class="admin-buttons">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> New Trade</button>
+                    <button class="btn btn-outline"><i class="fas fa-deposit"></i> Deposit</button>
+                    <button class="btn btn-outline"><i class="fas fa-withdraw"></i> Withdraw</button>
+                    <button class="btn btn-outline"><i class="fas fa-history"></i> History</button>
                 </div>
             </div>
         </div>
@@ -175,59 +161,39 @@
             <div class="section-header">
                 <span class="section-tag">Our Services</span>
                 <h2 class="section-title">Trade the Future</h2>
-                <p class="section-description">
-                    Invest in revolutionary companies changing the world
-                </p>
+                <p class="section-description">Invest in revolutionary companies changing the world</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fab fa-tesla"></i>
-                    </div>
+                    <div class="service-icon"><i class="fab fa-tesla"></i></div>
                     <h3 class="service-title">Tesla Trading</h3>
-                    <p class="service-description">
-                        Trade Tesla stock (TSLA) with zero commissions. Access the future of electric vehicles, 
-                        energy storage, and autonomous driving technology.
-                    </p>
+                    <p class="service-description">Trade Tesla stock (TSLA) with zero commissions. Access the future of electric vehicles.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Zero commission trading</li>
                         <li><i class="fas fa-check"></i> Extended hours trading</li>
                         <li><i class="fas fa-check"></i> Fractional shares</li>
                     </ul>
-                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card featured">
                     <div class="featured-badge">Most Popular</div>
-                    <div class="service-icon crypto">
-                        <i class="fas fa-dog"></i>
-                    </div>
+                    <div class="service-icon crypto"><i class="fas fa-dog"></i></div>
                     <h3 class="service-title">Dogecoin Trading</h3>
-                    <p class="service-description">
-                        Trade the people's crypto - Dogecoin. The cryptocurrency famously endorsed by Elon Musk 
-                        with low fees and instant execution.
-                    </p>
+                    <p class="service-description">Trade Dogecoin - the cryptocurrency famously endorsed by Elon Musk.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Ultra-low fees</li>
                         <li><i class="fas fa-check"></i> Instant execution</li>
                         <li><i class="fas fa-check"></i> Staking rewards</li>
                     </ul>
-                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon investments">
-                        <i class="fas fa-satellite"></i>
-                    </div>
+                    <div class="service-icon investments"><i class="fas fa-satellite"></i></div>
                     <h3 class="service-title">Space Stocks</h3>
-                    <p class="service-description">
-                        Invest in the new space race. Trade aerospace, satellite, and space exploration 
-                        companies leading humanity to the stars.
-                    </p>
+                    <p class="service-description">Invest in aerospace, satellite, and space exploration companies.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Aerospace stocks</li>
                         <li><i class="fas fa-check"></i> Satellite companies</li>
                         <li><i class="fas fa-check"></i> Space ETFs</li>
                     </ul>
-                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -240,72 +206,21 @@
                 <div class="features-text">
                     <span class="section-tag">Why Choose Us</span>
                     <h2 class="section-title">Trading at Light Speed</h2>
-                    <p class="section-description">
-                        Advanced tools meet innovation to give you the best trading experience
-                    </p>
                     <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Lightning Fast Execution</h4>
-                                <p>Trade with sub-millisecond execution speeds - Mars won't wait</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Bank-Grade Security</h4>
-                                <p>Your assets are protected with cold storage & multi-signature wallets</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>AI-Powered Insights</h4>
-                                <p>Get AI-driven market analysis inspired by Optimus</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>24/7 Expert Support</h4>
-                                <p>Get help anytime from our team of trading experts</p>
-                            </div>
-                        </div>
+                        <div class="feature-item"><div class="feature-icon"><i class="fas fa-bolt"></i></div><div class="feature-content"><h4>Lightning Fast</h4><p>Sub-millisecond execution speeds</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><div class="feature-content"><h4>Bank-Grade Security</h4><p>Cold storage & multi-sig wallets</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><i class="fas fa-robot"></i></div><div class="feature-content"><h4>AI-Powered</h4><p>AI-driven market analysis</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><i class="fas fa-headset"></i></div><div class="feature-content"><h4>24/7 Support</h4><p>Expert help anytime</p></div></div>
                     </div>
                 </div>
                 <div class="features-visual">
                     <div class="platform-preview">
-                        <div class="platform-header">
-                            <div class="platform-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="platform-title">Trading Platform</span>
-                        </div>
+                        <div class="platform-header"><div class="platform-dots"><span></span><span></span><span></span></div><span class="platform-title">Trading Platform</span></div>
                         <div class="platform-content">
                             <div class="trade-panel">
                                 <div class="trade-pair">
-                                    <div class="pair-info">
-                                        <span class="pair-icon"><i class="fab fa-tesla"></i></span>
-                                        <span class="pair-name">TSLA/USD</span>
-                                    </div>
-                                    <div class="pair-price">
-                                        <span class="current-price">$412.34</span>
-                                        <span class="price-change positive">+3.45%</span>
-                                    </div>
-                                </div>
-                                <div class="trade-chart-mini">
-                                    <svg viewBox="0 0 200 60">
-                                        <path d="M0,45 Q20,40 40,35 T80,30 T120,20 T160,15 T200,10" fill="none" stroke="#00c087" stroke-width="2"/>
-                                    </svg>
+                                    <div class="pair-info"><span class="pair-icon"><i class="fab fa-tesla"></i></span><span class="pair-name">TSLA/USD</span></div>
+                                    <div class="pair-price"><span class="current-price">$412.34</span><span class="price-change positive">+3.45%</span></div>
                                 </div>
                                 <div class="trade-buttons">
                                     <button class="trade-btn buy">Buy</button>
@@ -313,12 +228,7 @@
                                 </div>
                                 <div class="trade-inputs">
                                     <input type="number" placeholder="Amount" class="trade-input">
-                                    <div class="quick-amounts">
-                                        <span>25%</span>
-                                        <span>50%</span>
-                                        <span>75%</span>
-                                        <span>100%</span>
-                                    </div>
+                                    <div class="quick-amounts"><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
                                 </div>
                             </div>
                         </div>
@@ -334,156 +244,45 @@
             <div class="section-header">
                 <span class="section-tag">Live Markets</span>
                 <h2 class="section-title">Trade What You Love</h2>
-                <p class="section-description">
-                    Access stocks, crypto, and futuristic assets
-                </p>
             </div>
             <div class="markets-grid">
                 <div class="market-card">
-                    <div class="market-header">
-                        <div class="market-icon stocks">
-                            <i class="fab fa-tesla"></i>
-                        </div>
-                        <h3>Tesla & EV</h3>
-                    </div>
-                    <div class="market-stats">
-                        <div class="market-stat">
-                            <span class="ms-label">Available</span>
-                            <span class="ms-value">50+</span>
-                        </div>
-                        <div class="market-stat">
-                            <span class="ms-label">Commissions</span>
-                            <span class="ms-value">$0</span>
-                        </div>
-                    </div>
+                    <div class="market-header"><div class="market-icon stocks"><i class="fab fa-tesla"></i></div><h3>Tesla & EV</h3></div>
                     <div class="market-list">
-                        <div class="market-item">
-                            <span class="mi-symbol">TSLA</span>
-                            <span class="mi-price">$412.34</span>
-                            <span class="mi-change positive">+3.45%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">RIVN</span>
-                            <span class="mi-price">$12.45</span>
-                            <span class="mi-change positive">+2.34%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">LCID</span>
-                            <span class="mi-price">$3.67</span>
-                            <span class="mi-change negative">-1.23%</span>
-                        </div>
+                        <div class="market-item"><span class="mi-symbol">TSLA</span><span class="mi-price">$412.34</span><span class="mi-change positive">+3.45%</span></div>
+                        <div class="market-item"><span class="mi-symbol">RIVN</span><span class="mi-price">$12.45</span><span class="mi-change positive">+2.34%</span></div>
+                        <div class="market-item"><span class="mi-symbol">LCID</span><span class="mi-price">$3.67</span><span class="mi-change negative">-1.23%</span></div>
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header">
-                        <div class="market-icon crypto">
-                            <i class="fas fa-dog"></i>
-                        </div>
-                        <h3>Crypto</h3>
-                    </div>
-                    <div class="market-stats">
-                        <div class="market-stat">
-                            <span class="ms-label">Available</span>
-                            <span class="ms-value">100+</span>
-                        </div>
-                        <div class="market-stat">
-                            <span class="ms-label">Volume</span>
-                            <span class="ms-value">$5B+</span>
-                        </div>
-                    </div>
+                    <div class="market-header"><div class="market-icon crypto"><i class="fas fa-dog"></i></div><h3>Crypto</h3></div>
                     <div class="market-list">
-                        <div class="market-item">
-                            <span class="mi-symbol">DOGE</span>
-                            <span class="mi-price">$0.1234</span>
-                            <span class="mi-change positive">+5.67%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">BTC</span>
-                            <span class="mi-price">$67,234</span>
-                            <span class="mi-change positive">+2.34%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">ETH</span>
-                            <span class="mi-price">$3,456</span>
-                            <span class="mi-change positive">+1.89%</span>
-                        </div>
+                        <div class="market-item"><span class="mi-symbol">DOGE</span><span class="mi-price">$0.1234</span><span class="mi-change positive">+5.67%</span></div>
+                        <div class="market-item"><span class="mi-symbol">BTC</span><span class="mi-price">$67,234</span><span class="mi-change positive">+2.34%</span></div>
+                        <div class="market-item"><span class="mi-symbol">ETH</span><span class="mi-price">$3,456</span><span class="mi-change positive">+1.89%</span></div>
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header">
-                        <div class="market-icon forex">
-                            <i class="fas fa-satellite"></i>
-                        </div>
-                        <h3>Space Tech</h3>
-                    </div>
-                    <div class="market-stats">
-                        <div class="market-stat">
-                            <span class="ms-label">Available</span>
-                            <span class="ms-value">30+</span>
-                        </div>
-                        <div class="market-stat">
-                            <span class="ms-label">Sector</span>
-                            <span class="ms-value">Aerospace</span>
-                        </div>
-                    </div>
+                    <div class="market-header"><div class="market-icon forex"><i class="fas fa-satellite"></i></div><h3>Space Tech</h3></div>
                     <div class="market-list">
-                        <div class="market-item">
-                            <span class="mi-symbol">SPACE</span>
-                            <span class="mi-price">$156.78</span>
-                            <span class="mi-change positive">+2.89%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">BA</span>
-                            <span class="mi-price">$198.45</span>
-                            <span class="mi-change positive">+1.12%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">LMT</span>
-                            <span class="mi-price">$512.67</span>
-                            <span class="mi-change positive">+0.78%</span>
-                        </div>
+                        <div class="market-item"><span class="mi-symbol">SPACE</span><span class="mi-price">$156.78</span><span class="mi-change positive">+2.89%</span></div>
+                        <div class="market-item"><span class="mi-symbol">BA</span><span class="mi-price">$198.45</span><span class="mi-change positive">+1.12%</span></div>
+                        <div class="market-item"><span class="mi-symbol">LMT</span><span class="mi-price">$512.67</span><span class="mi-change positive">+0.78%</span></div>
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header">
-                        <div class="market-icon commodities">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3>AI & Robotics</h3>
-                    </div>
-                    <div class="market-stats">
-                        <div class="market-stat">
-                            <span class="ms-label">Available</span>
-                            <span class="ms-value">40+</span>
-                        </div>
-                        <div class="market-stat">
-                            <span class="ms-label">Leverage</span>
-                            <span class="ms-value">10x</span>
-                        </div>
-                    </div>
+                    <div class="market-header"><div class="market-icon commodities"><i class="fas fa-robot"></i></div><h3>AI & Robotics</h3></div>
                     <div class="market-list">
-                        <div class="market-item">
-                            <span class="mi-symbol">NVDA</span>
-                            <span class="mi-price">$878.90</span>
-                            <span class="mi-change positive">+4.56%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">AI</span>
-                            <span class="mi-price">$45.67</span>
-                            <span class="mi-change positive">+3.21%</span>
-                        </div>
-                        <div class="market-item">
-                            <span class="mi-symbol">PLTR</span>
-                            <span class="mi-price">$23.45</span>
-                            <span class="mi-change positive">+2.89%</span>
-                        </div>
+                        <div class="market-item"><span class="mi-symbol">NVDA</span><span class="mi-price">$878.90</span><span class="mi-change positive">+4.56%</span></div>
+                        <div class="market-item"><span class="mi-symbol">AI</span><span class="mi-price">$45.67</span><span class="mi-change positive">+3.21%</span></div>
+                        <div class="market-item"><span class="mi-symbol">PLTR</span><span class="mi-price">$23.45</span><span class="mi-change positive">+2.89%</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials with Real Pictures -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -492,63 +291,27 @@
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "OptimusTrade helped me invest in Tesla early. The platform is fast, reliable, 
-                        and perfect for tech enthusiasts like me!"
-                    </p>
+                    <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"OptimusTrade helped me invest in Tesla early. The platform is fast, reliable, and perfect for tech enthusiasts!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <span class="author-name">Musk K.</span>
-                            <span class="author-title">Tech Investor</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Musk Investor" class="author-img">
+                        <div class="author-info"><span class="author-name">Michael Chang</span><span class="author-title">Tech Investor</span></div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Finally, a trading platform that understands future tech! Dogecoin trading is seamless 
-                        and the AI insights are incredible."
-                    </p>
+                    <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Finally, a trading platform that understands future tech! Dogecoin trading is seamless and the AI insights are incredible."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div class="author-info">
-                            <span class="author-name">Sarah Chen</span>
-                            <span class="author-title">Crypto Trader</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="author-img">
+                        <div class="author-info"><span class="author-name">Sarah Chen</span><span class="author-title">Crypto Trader</span></div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "I love the space stocks section. Being able to trade aerospace companies alongside 
-                        my Tesla holdings is amazing!"
-                    </p>
+                    <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"I love the space stocks section. Being able to trade aerospace companies alongside my Tesla holdings is amazing!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">JR</div>
-                        <div class="author-info">
-                            <span class="author-name">James Rodriguez</span>
-                            <span class="author-title">Space Investor</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="James Rodriguez" class="author-img">
+                        <div class="author-info"><span class="author-name">James Rodriguez</span><span class="author-title">Space Investor</span></div>
                     </div>
                 </div>
             </div>
@@ -560,17 +323,10 @@
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Join the Future of Investing</h2>
-                <p class="cta-description">
-                    Trade alongside thousands of investors believing in Elon Musk's vision. 
-                    Get started in minutes and own a piece of the future.
-                </p>
+                <p class="cta-description">Trade alongside thousands of investors believing in Elon Musk's vision. Get started in minutes.</p>
                 <div class="cta-buttons">
-                    <a href="#register" class="btn btn-primary btn-lg">
-                        <i class="fas fa-user-plus"></i> Create Free Account
-                    </a>
-                    <a href="#contact" class="btn btn-outline btn-lg">
-                        <i class="fas fa-phone"></i> Contact Sales
-                    </a>
+                    <a href="#" class="btn btn-primary btn-lg" onclick="openModal('registerModal'); return false;"><i class="fas fa-user-plus"></i> Create Free Account</a>
+                    <a href="#contact" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -583,43 +339,17 @@
                 <div class="contact-info">
                     <span class="section-tag">Get In Touch</span>
                     <h2 class="section-title">Have Questions?</h2>
-                    <p class="contact-description">
-                        Our team of space-savvy experts is here to help. Reach out and we'll 
-                        get back to you within 24 hours.
-                    </p>
                     <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="cm-details">
-                                <span class="cm-label">Email</span>
-                                <span class="cm-value">support@optimustrade.com</span>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="fas fa-phone"></i></div>
-                            <div class="cm-details">
-                                <span class="cm-label">Phone</span>
-                                <span class="cm-value">+1 (888) OPTIMUS</span>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="cm-details">
-                                <span class="cm-label">Headquarters</span>
-                                <span class="cm-value">SpaceX HQ, Hawthorne, CA</span>
-                            </div>
-                        </div>
+                        <div class="contact-method"><div class="cm-icon"><i class="fas fa-envelope"></i></div><div class="cm-details"><span class="cm-label">Email</span><span class="cm-value">support@optimustrade.com</span></div></div>
+                        <div class="contact-method"><div class="cm-icon"><i class="fas fa-phone"></i></div><div class="cm-details"><span class="cm-label">Phone</span><span class="cm-value">+1 (888) OPTIMUS</span></div></div>
+                        <div class="contact-method"><div class="cm-icon"><i class="fas fa-map-marker-alt"></i></div><div class="cm-details"><span class="cm-label">Headquarters</span><span class="cm-value">SpaceX HQ, Hawthorne, CA</span></div></div>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <h3>Send us a Message</h3>
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address" required>
-                        </div>
+                        <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
                         <div class="form-group">
                             <select name="subject" required>
                                 <option value="">Select Subject</option>
@@ -629,12 +359,8 @@
                                 <option value="partnership">Partnership</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <div class="form-group"><textarea name="message" placeholder="Your Message" rows="4" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -647,14 +373,8 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <div class="footer-brand">
-                        <div class="logo">
-                            <span class="logo-icon"><i class="fas fa-rocket"></i></span>
-                            <span class="logo-text">Optimus<span class="accent">Trade</span></span>
-                        </div>
-                        <p class="footer-description">
-                            Your trusted partner for Tesla, SpaceX, and future tech investing. 
-                            Join the revolution to Mars and beyond!
-                        </p>
+                        <div class="logo"><span class="logo-icon"><i class="fas fa-rocket"></i></span><span class="logo-text">Optimus<span class="accent">Trade</span></span></div>
+                        <p class="footer-description">Your trusted partner for Tesla, SpaceX, and future tech investing. Join the revolution to Mars!</p>
                         <div class="footer-social">
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
@@ -664,60 +384,15 @@
                         </div>
                     </div>
                     <div class="footer-links">
-                        <div class="footer-column">
-                            <h4>Trading</h4>
-                            <ul>
-                                <li><a href="#">Tesla Stocks</a></li>
-                                <li><a href="#">Dogecoin</a></li>
-                                <li><a href="#">Space Stocks</a></li>
-                                <li><a href="#">AI & Robotics</a></li>
-                                <li><a href="#">ETFs</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Company</h4>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Press</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Support</h4>
-                            <ul>
-                                <li><a href="#">Help Center</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Security</a></li>
-                                <li><a href="#">Trading Rules</a></li>
-                                <li><a href="#">API Documentation</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Legal</h4>
-                            <ul>
-                                <li><a href="#">Terms of Service</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Cookie Policy</a></li>
-                                <li><a href="#">Risk Disclosure</a></li>
-                                <li><a href="#">Licenses</a></li>
-                            </ul>
-                        </div>
+                        <div class="footer-column"><h4>Trading</h4><ul><li><a href="#">Tesla Stocks</a></li><li><a href="#">Dogecoin</a></li><li><a href="#">Space Stocks</a></li><li><a href="#">AI & Robotics</a></li></ul></div>
+                        <div class="footer-column"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Contact</a></li></ul></div>
+                        <div class="footer-column"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">FAQs</a></li><li><a href="#">Security</a></li><li><a href="#">API</a></li></ul></div>
+                        <div class="footer-column"><h4>Legal</h4><ul><li><a href="#">Terms</a></li><li><Privacy</a></li><li><a href="#">a href="#">Risk Disclosure</a></li></ul></div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <div class="footer-legal">
-                        <p>&copy; 2024 OptimusTrade. All rights reserved.</p>
-                        <p class="disclaimer">
-                            Trading involves risk. Past performance does not guarantee future results.
-                            "The future is already here – it's just not very evenly distributed."
-                        </p>
-                    </div>
-                    <div class="footer-badges">
-                        <span class="badge"><i class="fas fa-lock"></i> SSL Secured</span>
-                        <span class="badge"><i class="fas fa-shield-alt"></i> Regulated</span>
-                    </div>
+                    <div class="footer-legal"><p>&copy; 2024 OptimusTrade. All rights reserved.</p></div>
+                    <div class="footer-badges"><span class="badge"><i class="fas fa-lock"></i> SSL Secured</span><span class="badge"><i class="fas fa-shield-alt"></i> Regulated</span></div>
                 </div>
             </div>
         </div>
@@ -730,16 +405,9 @@
             <h2>Welcome Back</h2>
             <p class="modal-subtitle">Login to your OptimusTrade account</p>
             <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-                <div class="form-options">
-                    <label><input type="checkbox"> Remember me</label>
-                    <a href="#" class="forgot-link">Forgot password?</a>
-                </div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                <div class="form-group"><input type="password" name="password" placeholder="Password" required></div>
+                <div class="form-options"><label><input type="checkbox"> Remember me</label><a href="#" class="forgot-link">Forgot password?</a></div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
             <p class="modal-footer-text">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'registerModal')">Sign up</a></p>
@@ -753,21 +421,11 @@
             <h2>Create Account</h2>
             <p class="modal-subtitle">Join the future of investing</p>
             <form id="registerForm" onsubmit="handleRegister(event)">
-                <div class="form-group">
-                    <input type="text" name="fullname" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password (min 8 characters)" required minlength="8">
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Phone Number">
-                </div>
-                <div class="form-options">
-                    <label><input type="checkbox" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
-                </div>
+                <div class="form-group"><input type="text" name="fullname" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                <div class="form-group"><input type="password" name="password" placeholder="Password (min 8 characters)" required minlength="8"></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+                <div class="form-options"><label><input type="checkbox" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label></div>
                 <button type="submit" class="btn btn-primary btn-block">Create Account</button>
             </form>
             <p class="modal-footer-text">Already have an account? <a href="#" onclick="switchModal('registerModal', 'loginModal')">Login</a></p>

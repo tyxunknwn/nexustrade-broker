@@ -6,6 +6,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 const tickerItems = document.querySelectorAll('.ticker-item');
 const contactForm = document.getElementById('contactForm');
 
+// Current user state
+let currentUser = null;
+
 // Mobile Navigation Toggle
 mobileToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
@@ -31,7 +34,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Smooth Scrolling for Navigation
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -44,7 +47,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Active Navigation Link on Scroll
+// Active Navigation
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
     let current = '';
@@ -62,7 +65,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Market Ticker Price Simulation
+// Market Ticker
 const tickerPrices = {
     'TSLA': { price: 412.34, change: 3.45 },
     'SPACE': { price: 156.78, change: 2.89 },
@@ -139,26 +142,8 @@ counterObserver.observe(heroSection);
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        const name = this.querySelector('input[name="name"]').value.trim();
-        const email = this.querySelector('input[name="email"]').value.trim();
-        const subject = this.querySelector('select[name="subject"]').value;
-        const message = this.querySelector('textarea[name="message"]').value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        let isValid = true;
-        let errorMessage = '';
-        
-        if (!name) { isValid = false; errorMessage = 'Please enter your name.'; }
-        else if (!email || !emailRegex.test(email)) { isValid = false; errorMessage = 'Please enter a valid email address.'; }
-        else if (!subject) { isValid = false; errorMessage = 'Please select a subject.'; }
-        else if (!message) { isValid = false; errorMessage = 'Please enter your message.'; }
-        
-        if (isValid) {
-            alert('Thank you for your message! We will get back to you within 24 hours.');
-            this.reset();
-        } else {
-            alert(errorMessage);
-        }
+        alert('Thank you for your message! We will get back to you within 24 hours.');
+        this.reset();
     });
 }
 
@@ -170,27 +155,6 @@ quickAmounts.forEach(btn => {
         this.classList.add('active');
     });
 });
-
-// Fade-in Animations
-const fadeElements = document.querySelectorAll('.service-card, .market-card, .testimonial-card, .feature-item');
-const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        }
-    });
-}, { threshold: 0.1 });
-
-fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeObserver.observe(el);
-});
-
-const style = document.createElement('style');
-style.textContent = `.fade-in { opacity: 1 !important; transform: translateY(0) !important; }`;
-document.head.appendChild(style);
 
 // Modal Functions
 function openModal(modalId) {
@@ -221,29 +185,80 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Handle Login
 function handleLogin(e) {
     e.preventDefault();
     const form = e.target;
     const email = form.querySelector('input[name="email"]').value;
     const password = form.querySelector('input[name="password"]').value;
+    
     if (email && password) {
-        alert('Login successful! Welcome back to OptimusTrade.');
+        currentUser = { email: email, name: email.split('@')[0] };
+        updateUIForLoggedInUser(currentUser.name);
         closeModal('loginModal');
+        alert('Login successful! Welcome back to OptimusTrade.');
         form.reset();
     }
 }
 
+// Handle Register
 function handleRegister(e) {
     e.preventDefault();
     const form = e.target;
     const fullname = form.querySelector('input[name="fullname"]').value;
     const email = form.querySelector('input[name="email"]').value;
     const password = form.querySelector('input[name="password"]').value;
+    
     if (fullname && email && password) {
-        alert('Account created successfully! Welcome to OptimusTrade. Start trading the future!');
+        currentUser = { email: email, name: fullname };
+        updateUIForLoggedInUser(fullname);
         closeModal('registerModal');
+        alert('Account created successfully! Welcome to OptimusTrade. Your admin dashboard is now available!');
         form.reset();
     }
+}
+
+// Update UI when user logs in
+function updateUIForLoggedInUser(name) {
+    // Hide login/register buttons
+    document.getElementById('loginBtn').style.display = 'none';
+    document.getElementById('registerBtn').style.display = 'none';
+    
+    // Show user greeting and logout
+    const greeting = document.getElementById('userGreeting');
+    greeting.textContent = 'Welcome, ' + name + '!';
+    greeting.style.display = 'block';
+    document.getElementById('logoutBtn').style.display = 'block';
+    
+    // Show admin nav link
+    document.getElementById('adminNav').style.display = 'block';
+    
+    // Show admin dashboard section
+    document.getElementById('admin').style.display = 'block';
+    
+    // Update admin name
+    document.getElementById('adminName').textContent = name;
+}
+
+// Handle Logout
+function handleLogout() {
+    currentUser = null;
+    
+    // Show login/register buttons
+    document.getElementById('loginBtn').style.display = 'block';
+    document.getElementById('registerBtn').style.display = 'block';
+    
+    // Hide user greeting and logout
+    document.getElementById('userGreeting').style.display = 'none';
+    document.getElementById('logoutBtn').style.display = 'none';
+    
+    // Hide admin nav link
+    document.getElementById('adminNav').style.display = 'none';
+    
+    // Hide admin dashboard section
+    document.getElementById('admin').style.display = 'none';
+    
+    alert('You have been logged out. See you soon!');
 }
 
 // Initialize
