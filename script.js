@@ -85,15 +85,15 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// Market Ticker Price Simulation
+// Market Ticker Price Simulation (SpaceX, Tesla, Doge theme)
 // ========================================
 const tickerPrices = {
+    'TSLA': { price: 412.34, change: 3.45 },
+    'SPACE': { price: 156.78, change: 2.89 },
+    'DOGE': { price: 0.1234, change: 5.67 },
     'BTC': { price: 67234.56, change: 2.34 },
     'ETH': { price: 3456.78, change: 1.89 },
-    'AAPL': { price: 189.45, change: 0.76 },
-    'TSLA': { price: 245.67, change: -1.23 },
-    'NVDA': { price: 878.90, change: 3.45 },
-    'SPY': { price: 512.34, change: 0.45 }
+    'XRP': { price: 0.5678, change: -1.23 }
 };
 
 function updateTickerPrices() {
@@ -114,8 +114,10 @@ function updateTickerPrices() {
             let formattedPrice;
             if (tickerPrices[symbol].price > 1000) {
                 formattedPrice = '$' + tickerPrices[symbol].price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            } else {
+            } else if (tickerPrices[symbol].price > 1) {
                 formattedPrice = '$' + tickerPrices[symbol].price.toFixed(2);
+            } else {
+                formattedPrice = '$' + tickerPrices[symbol].price.toFixed(4);
             }
             
             priceEl.textContent = formattedPrice;
@@ -289,5 +291,5 @@ window.addEventListener('resize', () => {
 // Initialize
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('NexusTrade - Broker Website Loaded');
+    console.log('OptimusTrade - SpaceX & Tesla Broker Website Loaded');
 });
