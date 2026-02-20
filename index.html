@@ -29,8 +29,8 @@
                     </ul>
                 </nav>
                 <div class="header-buttons">
-                    <a href="#login" class="btn btn-outline">Login</a>
-                    <a href="#register" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-outline" onclick="openModal('loginModal'); return false;">Login</a>
+                    <a href="#" class="btn btn-primary" onclick="openModal('registerModal'); return false;">Get Started</a>
                 </div>
                 <button class="mobile-toggle" aria-label="Toggle navigation">
                     <span></span>
@@ -722,6 +722,57 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Welcome Back</h2>
+            <p class="modal-subtitle">Login to your OptimusTrade account</p>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <p class="modal-footer-text">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'registerModal')">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Create Account</h2>
+            <p class="modal-subtitle">Join the future of investing</p>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password (min 8 characters)" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="form-options">
+                    <label><input type="checkbox" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            <p class="modal-footer-text">Already have an account? <a href="#" onclick="switchModal('registerModal', 'loginModal')">Login</a></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

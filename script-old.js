@@ -1,4 +1,6 @@
+// ========================================
 // DOM Elements
+// ========================================
 const header = document.querySelector('.header');
 const mobileToggle = document.querySelector('.mobile-toggle');
 const nav = document.querySelector('.nav');
@@ -6,12 +8,15 @@ const navLinks = document.querySelectorAll('.nav-link');
 const tickerItems = document.querySelectorAll('.ticker-item');
 const contactForm = document.getElementById('contactForm');
 
+// ========================================
 // Mobile Navigation Toggle
+// ========================================
 mobileToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
     mobileToggle.classList.toggle('active');
 });
 
+// Close mobile nav when clicking a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
@@ -19,19 +24,25 @@ navLinks.forEach(link => {
     });
 });
 
+// ========================================
 // Header Scroll Effect
+// ========================================
 let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
+    
     if (currentScroll > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
+    
     lastScroll = currentScroll;
 });
 
+// ========================================
 // Smooth Scrolling for Navigation
+// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -39,21 +50,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             const headerHeight = header.offsetHeight;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         }
     });
 });
 
+// ========================================
 // Active Navigation Link on Scroll
+// ========================================
 const sections = document.querySelectorAll('section[id]');
+
 window.addEventListener('scroll', () => {
     let current = '';
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
         if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
+    
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -62,7 +84,9 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Market Ticker Price Simulation
+// ========================================
+// Market Ticker Price Simulation (SpaceX, Tesla, Doge theme)
+// ========================================
 const tickerPrices = {
     'TSLA': { price: 412.34, change: 3.45 },
     'SPACE': { price: 156.78, change: 2.89 },
@@ -79,10 +103,14 @@ function updateTickerPrices() {
         const changeEl = item.querySelector('.ticker-change');
         
         if (tickerPrices[symbol]) {
+            // Simulate small price changes
             const priceChange = (Math.random() - 0.5) * 0.01;
             tickerPrices[symbol].price *= (1 + priceChange);
+            
+            // Update change slightly
             tickerPrices[symbol].change += (Math.random() - 0.5) * 0.1;
             
+            // Format price
             let formattedPrice;
             if (tickerPrices[symbol].price > 1000) {
                 formattedPrice = '$' + tickerPrices[symbol].price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -93,6 +121,8 @@ function updateTickerPrices() {
             }
             
             priceEl.textContent = formattedPrice;
+            
+            // Update change indicator
             const isPositive = tickerPrices[symbol].change >= 0;
             changeEl.textContent = (isPositive ? '+' : '') + tickerPrices[symbol].change.toFixed(2) + '%';
             changeEl.className = 'ticker-change ' + (isPositive ? 'positive' : 'negative');
@@ -100,16 +130,21 @@ function updateTickerPrices() {
     });
 }
 
+// Update prices every 3 seconds
 setInterval(updateTickerPrices, 3000);
 
-// Counter Animation
+// ========================================
+// Counter Animation for Statistics
+// ========================================
 const statNumbers = document.querySelectorAll('.stat-number');
+
 function animateCounters() {
     statNumbers.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-count'));
         const duration = 2000;
         const step = target / (duration / 16);
         let current = 0;
+        
         const updateCounter = () => {
             current += step;
             if (current < target) {
@@ -119,12 +154,19 @@ function animateCounters() {
                 counter.textContent = target;
             }
         };
+        
         updateCounter();
     });
 }
 
+// Trigger counter animation when hero section is visible
 const heroSection = document.querySelector('.hero');
 let countersAnimated = false;
+
+const observerOptions = {
+    threshold: 0.5
+};
+
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !countersAnimated) {
@@ -132,28 +174,46 @@ const counterObserver = new IntersectionObserver((entries) => {
             countersAnimated = true;
         }
     });
-}, { threshold: 0.5 });
+}, observerOptions);
+
 counterObserver.observe(heroSection);
 
+// ========================================
 // Form Validation
+// ========================================
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        // Get form values
         const name = this.querySelector('input[name="name"]').value.trim();
         const email = this.querySelector('input[name="email"]').value.trim();
         const subject = this.querySelector('select[name="subject"]').value;
         const message = this.querySelector('textarea[name="message"]').value.trim();
+        
+        // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
+        // Simple validation
         let isValid = true;
         let errorMessage = '';
         
-        if (!name) { isValid = false; errorMessage = 'Please enter your name.'; }
-        else if (!email || !emailRegex.test(email)) { isValid = false; errorMessage = 'Please enter a valid email address.'; }
-        else if (!subject) { isValid = false; errorMessage = 'Please select a subject.'; }
-        else if (!message) { isValid = false; errorMessage = 'Please enter your message.'; }
+        if (!name) {
+            isValid = false;
+            errorMessage = 'Please enter your name.';
+        } else if (!email || !emailRegex.test(email)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid email address.';
+        } else if (!subject) {
+            isValid = false;
+            errorMessage = 'Please select a subject.';
+        } else if (!message) {
+            isValid = false;
+            errorMessage = 'Please enter your message.';
+        }
         
         if (isValid) {
+            // Show success message (in a real app, this would send data to server)
             alert('Thank you for your message! We will get back to you within 24 hours.');
             this.reset();
         } else {
@@ -162,7 +222,9 @@ if (contactForm) {
     });
 }
 
-// Quick Amount Buttons
+// ========================================
+// Quick Amount Buttons in Trade Panel
+// ========================================
 const quickAmounts = document.querySelectorAll('.quick-amounts span');
 quickAmounts.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -171,8 +233,11 @@ quickAmounts.forEach(btn => {
     });
 });
 
-// Fade-in Animations
+// ========================================
+// Intersection Observer for Fade-in Animations
+// ========================================
 const fadeElements = document.querySelectorAll('.service-card, .market-card, .testimonial-card, .feature-item');
+
 const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -188,65 +253,43 @@ fadeElements.forEach(el => {
     fadeObserver.observe(el);
 });
 
+// Add fade-in class styles
 const style = document.createElement('style');
-style.textContent = `.fade-in { opacity: 1 !important; transform: translateY(0) !important; }`;
+style.textContent = `
+    .fade-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
 document.head.appendChild(style);
 
-// Modal Functions
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+// ========================================
+// Number Formatting for Market Prices
+// ========================================
+function formatPrice(price, decimals = 2) {
+    if (price >= 1000) {
+        return '$' + price.toLocaleString('en-US', { 
+            minimumFractionDigits: decimals, 
+            maximumFractionDigits: decimals 
+        });
     }
+    return '$' + price.toFixed(decimals);
 }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-function switchModal(fromModalId, toModalId) {
-    closeModal(fromModalId);
-    setTimeout(() => { openModal(toModalId); }, 200);
-}
-
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
+// ========================================
+// Handle Window Resize
+// ========================================
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Recalculate any responsive elements if needed
+    }, 250);
 });
 
-function handleLogin(e) {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.querySelector('input[name="email"]').value;
-    const password = form.querySelector('input[name="password"]').value;
-    if (email && password) {
-        alert('Login successful! Welcome back to OptimusTrade.');
-        closeModal('loginModal');
-        form.reset();
-    }
-}
-
-function handleRegister(e) {
-    e.preventDefault();
-    const form = e.target;
-    const fullname = form.querySelector('input[name="fullname"]').value;
-    const email = form.querySelector('input[name="email"]').value;
-    const password = form.querySelector('input[name="password"]').value;
-    if (fullname && email && password) {
-        alert('Account created successfully! Welcome to OptimusTrade. Start trading the future!');
-        closeModal('registerModal');
-        form.reset();
-    }
-}
-
+// ========================================
 // Initialize
+// ========================================
 document.addEventListener('DOMContentLoaded', () => {
     console.log('OptimusTrade - SpaceX & Tesla Broker Website Loaded');
 });
