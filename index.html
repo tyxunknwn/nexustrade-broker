@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusTrade - Stock, Crypto & Investment Broker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
+                    <span class="logo-text">Nexus<span class="accent">Trade</span></span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#markets" class="nav-link">Markets</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="#login" class="btn btn-outline">Login</a>
+                    <a href="#register" class="btn btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Market Ticker -->
+    <div class="market-ticker">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker-item">
+                    <span class="ticker-symbol">BTC</span>
+                    <span class="ticker-price">$67,234.56</span>
+                    <span class="ticker-change positive">+2.34%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">ETH</span>
+                    <span class="ticker-price">$3,456.78</span>
+                    <span class="ticker-change positive">+1.89%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">AAPL</span>
+                    <span class="ticker-price">$189.45</span>
+                    <span class="ticker-change positive">+0.76%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">TSLA</span>
+                    <span class="ticker-price">$245.67</span>
+                    <span class="ticker-change negative">-1.23%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">NVDA</span>
+                    <span class="ticker-price">$878.90</span>
+                    <span class="ticker-change positive">+3.45%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">SPY</span>
+                    <span class="ticker-price">$512.34</span>
+                    <span class="ticker-change positive">+0.45%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">ETH</span>
+                    <span class="ticker-price">$3,456.78</span>
+                    <span class="ticker-change positive">+1.89%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-symbol">BTC</span>
+                    <span class="ticker-price">$67,234.56</span>
+                    <span class="ticker-change positive">+2.34%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Trusted by 50,000+ Investors Worldwide
+                </div>
+                <h1 class="hero-title">
+                    Trade Stocks, Crypto & <span class="gradient-text">Invest Wisely</span>
+                </h1>
+                <p class="hero-description">
+                    Access global markets with zero commissions, real-time analytics, and expert insights. 
+                    Your journey to financial freedom starts here.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#register" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket"></i> Start Trading
+                    </a>
+                    <a href="#demo" class="btn btn-outline btn-lg">
+                        <i class="fas fa-play"></i> Watch Demo
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span><span class="stat-suffix">K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="2">0</span><span class="stat-suffix">B+</span>
+                        <span class="stat-label">Assets Traded</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <div class="chart-title">
+                            <span class="chart-icon"><i class="fas fa-chart-area"></i></span>
+                            Portfolio Performance
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot gold"></span> Stocks</span>
+                            <span class="legend-item"><span class="legend-dot purple"></span> Crypto</span>
+                        </div>
+                    </div>
+                    <div class="chart-area">
+                        <svg class="chart-svg" viewBox="0 0 500 200">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f0b90b;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#f0b90b;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <path class="chart-line" d="M0,150 Q50,140 100,120 T200,100 T300,80 T400,60 T500,40" fill="none" stroke="#f0b90b" stroke-width="3"/>
+                            <path class="chart-area-fill" d="M0,150 Q50,140 100,120 T200,100 T300,80 T400,60 T500,40 L500,200 L0,200 Z" fill="url(#chartGradient)"/>
+                            <path class="chart-line-2" d="M0,160 Q50,155 100,145 T200,130 T300,115 T400,95 T500,75" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="chart-numbers">
+                        <span>$0</span>
+                        <span>$25K</span>
+                        <span>$50K</span>
+                        <span>$75K</span>
+                        <span>$100K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Comprehensive Trading Solutions</h2>
+                <p class="section-description">
+                    Everything you need to trade and invest with confidence
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <h3 class="service-title">Stock Trading</h3>
+                    <p class="service-description">
+                        Trade thousands of stocks from major exchanges including NYSE, NASDAQ, and international markets with real-time pricing.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Zero commission stocks</li>
+                        <li><i class="fas fa-check"></i> Extended hours trading</li>
+                        <li><i class="fas fa-check"></i> Fractional shares</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon crypto">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3 class="service-title">Crypto Trading</h3>
+                    <p class="service-description">
+                        Buy, sell, and trade 100+ cryptocurrencies including Bitcoin, Ethereum, and emerging altcoins with deep liquidity.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 100+ crypto assets</li>
+                        <li><i class="fas fa-check"></i> Instant execution</li>
+                        <li><i class="fas fa-check"></i> Staking rewards</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon investments">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="service-title">Investment Portfolios</h3>
+                    <p class="service-description">
+                        Professionally managed portfolios tailored to your risk tolerance and financial goals. Automated rebalancing included.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Expert management</li>
+                        <li><i class="fas fa-check"></i> Tax-efficient</li>
+                        <li><i class="fas fa-check"></i> Low minimums</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="features-text">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2 class="section-title">Trading Made Simple & Secure</h2>
+                    <p class="section-description">
+                        Advanced tools meet intuitive design to give you the best trading experience
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Lightning Fast Execution</h4>
+                                <p>Trade with sub-millisecond execution speeds and zero slippage</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Bank-Grade Security</h4>
+                                <p>Your assets are protected with cold storage & multi-signature wallets</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Advanced Analytics</h4>
+                                <p>Real-time charts, indicators, and market insights at your fingertips</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>24/7 Expert Support</h4>
+                                <p>Get help anytime from our dedicated team of trading experts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-visual">
+                    <div class="platform-preview">
+                        <div class="platform-header">
+                            <div class="platform-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="platform-title">Trading Platform</span>
+                        </div>
+                        <div class="platform-content">
+                            <div class="trade-panel">
+                                <div class="trade-pair">
+                                    <div class="pair-info">
+                                        <span class="pair-icon"><i class="fab fa-bitcoin"></i></span>
+                                        <span class="pair-name">BTC/USD</span>
+                                    </div>
+                                    <div class="pair-price">
+                                        <span class="current-price">$67,234.56</span>
+                                        <span class="price-change positive">+2.34%</span>
+                                    </div>
+                                </div>
+                                <div class="trade-chart-mini">
+                                    <svg viewBox="0 0 200 60">
+                                        <path d="M0,45 Q20,40 40,35 T80,30 T120,20 T160,15 T200,10" fill="none" stroke="#00c087" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="trade-buttons">
+                                    <button class="trade-btn buy">Buy</button>
+                                    <button class="trade-btn sell">Sell</button>
+                                </div>
+                                <div class="trade-inputs">
+                                    <input type="number" placeholder="Amount" class="trade-input">
+                                    <div class="quick-amounts">
+                                        <span>25%</span>
+                                        <span>50%</span>
+                                        <span>75%</span>
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Markets Section -->
+    <section id="markets" class="markets">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Live Markets</span>
+                <h2 class="section-title">Trade What You Love</h2>
+                <p class="section-description">
+                    Access thousands of assets across multiple markets
+                </p>
+            </div>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <div class="market-header">
+                        <div class="market-icon stocks">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Stocks</h3>
+                    </div>
+                    <div class="market-stats">
+                        <div class="market-stat">
+                            <span class="ms-label">Available</span>
+                            <span class="ms-value">10,000+</span>
+                        </div>
+                        <div class="market-stat">
+                            <span class="ms-label">Commissions</span>
+                            <span class="ms-value">$0</span>
+                        </div>
+                    </div>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="mi-symbol">AAPL</span>
+                            <span class="mi-price">$189.45</span>
+                            <span class="mi-change positive">+0.76%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">MSFT</span>
+                            <span class="mi-price">$412.34</span>
+                            <span class="mi-change positive">+1.23%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">GOOGL</span>
+                            <span class="mi-price">$175.67</span>
+                            <span class="mi-change negative">-0.45%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <div class="market-header">
+                        <div class="market-icon crypto">
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                        <h3>Crypto</h3>
+                    </div>
+                    <div class="market-stats">
+                        <div class="market-stat">
+                            <span class="ms-label">Available</span>
+                            <span class="ms-value">150+</span>
+                        </div>
+                        <div class="market-stat">
+                            <span class="ms-label">Volume</span>
+                            <span class="ms-value">$2B+</span>
+                        </div>
+                    </div>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="mi-symbol">BTC</span>
+                            <span class="mi-price">$67,234</span>
+                            <span class="mi-change positive">+2.34%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">ETH</span>
+                            <span class="mi-price">$3,456</span>
+                            <span class="mi-change positive">+1.89%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">SOL</span>
+                            <span class="mi-price">$178.45</span>
+                            <span class="mi-change positive">+5.67%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <div class="market-header">
+                        <div class="market-icon forex">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Forex</h3>
+                    </div>
+                    <div class="market-stats">
+                        <div class="market-stat">
+                            <span class="ms-label">Pairs</span>
+                            <span class="ms-value">80+</span>
+                        </div>
+                        <div class="market-stat">
+                            <span class="ms-label">Spreads</span>
+                            <span class="ms-value">0.0 pips</span>
+                        </div>
+                    </div>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="mi-symbol">EUR/USD</span>
+                            <span class="mi-price">1.0876</span>
+                            <span class="mi-change positive">+0.12%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">GBP/USD</span>
+                            <span class="mi-price">1.2654</span>
+                            <span class="mi-change negative">-0.08%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">USD/JPY</span>
+                            <span class="mi-price">154.32</span>
+                            <span class="mi-change positive">+0.34%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <div class="market-header">
+                        <div class="market-icon commodities">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Commodities</h3>
+                    </div>
+                    <div class="market-stats">
+                        <div class="market-stat">
+                            <span class="ms-label">Available</span>
+                            <span class="ms-value">50+</span>
+                        </div>
+                        <div class="market-stat">
+                            <span class="ms-label">Leverage</span>
+                            <span class="ms-value">100x</span>
+                        </div>
+                    </div>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="mi-symbol">GOLD</span>
+                            <span class="mi-price">$2,345</span>
+                            <span class="mi-change positive">+0.56%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">SILVER</span>
+                            <span class="mi-price">$27.89</span>
+                            <span class="mi-change positive">+1.12%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="mi-symbol">OIL</span>
+                            <span class="mi-price">$78.45</span>
+                            <span class="mi-change negative">-0.78%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Trusted by Investors Worldwide</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "NexusTrade has completely transformed my investment strategy. The crypto trading experience is seamless, and I've seen incredible returns on my portfolio."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <span class="author-name">James Davidson</span>
+                            <span class="author-title">Crypto Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The best trading platform I've used. Zero commissions on stocks, real-time analytics, and excellent customer support. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah Kim</span>
+                            <span class="author-title">Day Trader</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I've been using NexusTrade for over a year now. The security features give me peace of mind, and the platform is incredibly intuitive."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <span class="author-name">Michael Roberts</span>
+                            <span class="author-title">Portfolio Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Trading?</h2>
+                <p class="cta-description">
+                    Join thousands of investors already trading with NexusTrade. 
+                    Get started in minutes with our easy-to-use platform.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#register" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus"></i> Create Free Account
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">
+                        <i class="fas fa-phone"></i> Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Have Questions?</h2>
+                    <p class="contact-description">
+                        Our team of experts is here to help you every step of the way. 
+                        Reach out and we'll get back to you within 24 hours.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="cm-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cm-details">
+                                <span class="cm-label">Email</span>
+                                <span class="cm-value">support@nexustrade.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="cm-icon"><i class="fas fa-phone"></i></div>
+                            <div class="cm-details">
+                                <span class="cm-label">Phone</span>
+                                <span class="cm-value">+1 (888) 123-4567</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="cm-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="cm-details">
+                                <span class="cm-label">Headquarters</span>
+                                <span class="cm-value">New York, NY 10001</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="account">Account Help</option>
+                                <option value="partnership">Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="logo-text">Nexus<span class="accent">Trade</span></span>
+                        </div>
+                        <p class="footer-description">
+                            Your trusted partner for stock, crypto, and investment trading. 
+                            Join thousands of investors worldwide.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Trading</h4>
+                            <ul>
+                                <li><a href="#">Stock Trading</a></li>
+                                <li><a href="#">Crypto Trading</a></li>
+                                <li><a href="#">Forex Trading</a></li>
+                                <li><a href="#">Commodities</a></li>
+                                <li><a href="#">ETFs</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Support</h4>
+                            <ul>
+                                <li><a href="#">Help Center</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Security</a></li>
+                                <li><a href="#">Trading Rules</a></li>
+                                <li><a href="#">API Documentation</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Legal</h4>
+                            <ul>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                                <li><a href="#">Risk Disclosure</a></li>
+                                <li><a href="#">Licenses</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <p>&copy; 2024 NexusTrade. All rights reserved.</p>
+                        <p class="disclaimer">
+                            Trading involves risk. Past performance does not guarantee future results.
+                            Please invest responsibly.
+                        </p>
+                    </div>
+                    <div class="footer-badges">
+                        <span class="badge"><i class="fas fa-lock"></i> SSL Secured</span>
+                        <span class="badge"><i class="fas fa-shield-alt"></i> Regulated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
