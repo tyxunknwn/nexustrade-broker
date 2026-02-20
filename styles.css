@@ -320,3 +320,28 @@ img { max-width: 100%; height: auto; }
 
 /* Market Images */
 .market-img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; background: white; padding: 4px; }
+
+/* Logo Images */
+.logo-img { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: white; padding: 4px; }
+.footer-logo-img { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: white; padding: 4px; margin-right: 10px; }
+
+/* Service Images */
+.service-img { width: 64px; height: 64px; border-radius: 16px; object-fit: contain; background: white; padding: 8px; }
+
+/* Admin Card Icon Images */
+.admin-card-icon img { width: 40px; height: 40px; object-fit: contain; }
+
+/* Feature Icon Images */
+.feature-icon img { width: 32px; height: 32px; object-fit: contain; }
+
+/* Chart Icon Image */
+.chart-icon-img { width: 36px; height: 36px; border-radius: 8px; object-fit: contain; background: white; padding: 4px; margin-right: 10px; }
+
+/* Pair Icon Image */
+.pair-icon-img { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: white; padding: 4px; margin-right: 12px; }
+
+/* Social Link Images */
+.social-link img { width: 20px; height: 20px; object-fit: contain; }
+
+/* Contact Method Icons */
+.cm-icon img { width: 32px; height: 32px; border-radius: 8px; object-fit: contain; }
