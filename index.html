@@ -9,6 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .logo-img, .service-img, .market-img, .footer-logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .service-img { width: 64px; height: 64px; }
+        .market-img { width: 48px; height: 48px; }
+        .feature-icon img { width: 32px; height: 32px; }
+        .admin-card-icon img { width: 40px; height: 40px; }
+        .chart-icon-img { width: 36px; height: 36px; margin-right: 8px; }
+        .pair-icon-img { width: 40px; height: 40px; margin-right: 12px; }
+        .cm-icon img { width: 32px; height: 32px; }
+        .social-link img { width: 20px; height: 20px; }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -16,7 +27,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/200px-SpaceX_logo_white.svg.png" alt="Logo" class="logo-img">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="Logo" class="logo-img">
                     <span class="logo-text">Optimus<span class="accent">Trade</span></span>
                 </div>
                 <nav class="nav">
@@ -49,19 +60,16 @@
                 <div class="ticker-item"><span class="ticker-symbol">TSLA</span><span class="ticker-price">$412.34</span><span class="ticker-change positive">+3.45%</span></div>
                 <div class="ticker-item"><span class="ticker-symbol">SPACE</span><span class="ticker-price">$156.78</span><span class="ticker-change positive">+2.89%</span></div>
                 <div class="ticker-item"><span class="ticker-symbol">DOGE</span><span class="ticker-price">$0.1234</span><span class="ticker-change positive">+5.67%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">XRP</span><span class="ticker-price">$0.5678</span><span class="ticker-change negative">-1.23%</span></div>
                 <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$67,234.56</span><span class="ticker-change positive">+2.34%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,456.78</span><span class="ticker-change positive">+1.89%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">SPACE</span><span class="ticker-price">$156.78</span><span class="ticker-change positive">+2.89%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">NVDA</span><span class="ticker-price">$878.90</span><span class="ticker-change positive">+4.56%</span></div>
                 <div class="ticker-item"><span class="ticker-symbol">TSLA</span><span class="ticker-price">$412.34</span><span class="ticker-change positive">+3.45%</span></div>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section with Elon Musk Background -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-elon-bg"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
@@ -77,10 +85,10 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#" class="btn btn-primary btn-lg" onclick="openModal('registerModal'); return false;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/200px-Tesla_Motors.svg.png" alt="" style="width:20px;margin-right:8px;"> Start Trading
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" style="width:20px;margin-right:8px;vertical-align:middle;"> Start Trading
                     </a>
                     <a href="#demo" class="btn btn-outline btn-lg">
-                        <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="" style="width:20px;margin-right:8px;"> Watch Demo
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="" style="width:20px;margin-right:8px;vertical-align:middle;"> Watch Demo
                     </a>
                 </div>
                 <div class="hero-stats">
@@ -93,7 +101,7 @@
             <div class="hero-visual">
                 <div class="chart-container">
                     <div class="chart-header">
-                        <div class="chart-title"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/100px-SpaceX_logo_white.svg.png" alt="" class="chart-icon-img">SpaceX & Tesla Portfolio</div>
+                        <div class="chart-title"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" class="chart-icon-img">SpaceX & Tesla Portfolio</div>
                         <div class="chart-legend"><span class="legend-item"><span class="legend-dot gold"></span> TSLA</span><span class="legend-item"><span class="legend-dot purple"></span> SPACE</span></div>
                     </div>
                     <div class="chart-area">
@@ -110,34 +118,34 @@
         </div>
     </section>
 
-    <!-- Admin Dashboard Section (Hidden by default) -->
+    <!-- Admin Dashboard Section -->
     <section id="admin" class="admin-dashboard" style="display:none;">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/100px-Tesla_Motors.svg.png" alt="" style="width:20px;margin-right:8px;"> Admin Dashboard</span>
+                <span class="section-tag"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" style="width:20px;margin-right:8px;vertical-align:middle;"> Admin Dashboard</span>
                 <h2 class="section-title">Welcome, <span id="adminName">Trader</span>!</h2>
             </div>
             <div class="admin-grid">
                 <div class="admin-card">
-                    <div class="admin-card-icon"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt=""></div>
+                    <div class="admin-card-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F7931A'/%3E%3Ctext x='50' y='65' font-size='35' text-anchor='middle' fill='white' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E" alt=""></div>
                     <h3>Account Balance</h3>
                     <p class="admin-balance">$125,430.00</p>
                     <span class="admin-change positive">+12.5% today</span>
                 </div>
                 <div class="admin-card">
-                    <div class="admin-card-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/100px-Nvidia_logo.svg.png" alt=""></div>
+                    <div class="admin-card-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt=""></div>
                     <h3>Total Profit</h3>
                     <p class="admin-balance">$45,230.00</p>
                     <span class="admin-change positive">+8.2% this month</span>
                 </div>
                 <div class="admin-card">
-                    <div class="admin-card-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/100px-SpaceX_logo_white.svg.png" alt=""></div>
+                    <div class="admin-card-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></div>
                     <h3>Total Trades</h3>
                     <p class="admin-balance">1,247</p>
                     <span class="admin-change">Today: 23 trades</span>
                 </div>
                 <div class="admin-card">
-                    <div class="admin-card-icon"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt=""></div>
+                    <div class="admin-card-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt=""></div>
                     <h3>Crypto Holdings</h3>
                     <p class="admin-balance">$52,340.00</p>
                     <span class="admin-change positive">BTC, ETH, DOGE</span>
@@ -146,10 +154,10 @@
             <div class="admin-actions">
                 <h3>Quick Actions</h3>
                 <div class="admin-buttons">
-                    <button class="btn btn-primary"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/50px-Tesla_Motors.svg.png" alt="" style="width:16px;margin-right:6px;"> New Trade</button>
-                    <button class="btn btn-outline"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="" style="width:16px;margin-right:6px;"> Deposit</button>
-                    <button class="btn btn-outline"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="" style="width:16px;margin-right:6px;"> Withdraw</button>
-                    <button class="btn btn-outline"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/50px-Nvidia_logo.svg.png" alt="" style="width:16px;margin-right:6px;"> History</button>
+                    <button class="btn btn-primary"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> New Trade</button>
+                    <button class="btn btn-outline"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F7931A'/%3E%3Ctext x='50' y='65' font-size='35' text-anchor='middle' fill='white' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> Deposit</button>
+                    <button class="btn btn-outline"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> Withdraw</button>
+                    <button class="btn btn-outline"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> History</button>
                 </div>
             </div>
         </div>
@@ -165,7 +173,7 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/200px-Tesla_Motors.svg.png" alt="Tesla" class="service-img"></div>
+                    <div class="service-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="Tesla" class="service-img"></div>
                     <h3 class="service-title">Tesla Trading</h3>
                     <p class="service-description">Trade Tesla stock (TSLA) with zero commissions. Access the future of electric vehicles.</p>
                     <ul class="service-features">
@@ -176,7 +184,7 @@
                 </div>
                 <div class="service-card featured">
                     <div class="featured-badge">Most Popular</div>
-                    <div class="service-icon crypto"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin" class="service-img"></div>
+                    <div class="service-icon crypto"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="Dogecoin" class="service-img"></div>
                     <h3 class="service-title">Dogecoin Trading</h3>
                     <p class="service-description">Trade Dogecoin - the cryptocurrency famously endorsed by Elon Musk.</p>
                     <ul class="service-features">
@@ -186,7 +194,7 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon investments"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/200px-SpaceX_logo_white.svg.png" alt="SpaceX" class="service-img"></div>
+                    <div class="service-icon investments"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="SpaceX" class="service-img"></div>
                     <h3 class="service-title">Space Stocks</h3>
                     <p class="service-description">Invest in aerospace, satellite, and space exploration companies.</p>
                     <ul class="service-features">
@@ -207,10 +215,10 @@
                     <span class="section-tag">Why Choose Us</span>
                     <h2 class="section-title">Trading at Light Speed</h2>
                     <div class="features-list">
-                        <div class="feature-item"><div class="feature-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/100px-Nvidia_logo.svg.png" alt=""></div><div class="feature-content"><h4>Lightning Fast</h4><p>Sub-millisecond execution speeds</p></div></div>
-                        <div class="feature-item"><div class="feature-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/100px-SpaceX_logo_white.svg.png" alt=""></div><div class="feature-content"><h4>Bank-Grade Security</h4><p>Cold storage & multi-sig wallets</p></div></div>
-                        <div class="feature-item"><div class="feature-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/100px-Tesla_Motors.svg.png" alt=""></div><div class="feature-content"><h4>AI-Powered</h4><p>AI-driven market analysis</p></div></div>
-                        <div class="feature-item"><div class="feature-icon"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt=""></div><div class="feature-content"><h4>24/7 Support</h4><p>Expert help anytime</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill-weight='bold'%='white' font3ENV%3C/text%3E%3C/svg%3E" alt=""></div><div class="feature-content"><h4>Lightning Fast</h4><p>Sub-millisecond execution speeds</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></div><div class="feature-content"><h4>Bank-Grade Security</h4><p>Cold storage & multi-sig wallets</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></div><div class="feature-content"><h4>AI-Powered</h4><p>AI-driven market analysis</p></div></div>
+                        <div class="feature-item"><div class="feature-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F7931A'/%3E%3Ctext x='50' y='65' font-size='35' text-anchor='middle' fill='white' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E" alt=""></div><div class="feature-content"><h4>24/7 Support</h4><p>Expert help anytime</p></div></div>
                     </div>
                 </div>
                 <div class="features-visual">
@@ -219,7 +227,7 @@
                         <div class="platform-content">
                             <div class="trade-panel">
                                 <div class="trade-pair">
-                                    <div class="pair-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/100px-Tesla_Motors.svg.png" alt="" class="pair-icon-img"><span class="pair-name">TSLA/USD</span></div>
+                                    <div class="pair-info"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" class="pair-icon-img"><span class="pair-name">TSLA/USD</span></div>
                                     <div class="pair-price"><span class="current-price">$412.34</span><span class="price-change positive">+3.45%</span></div>
                                 </div>
                                 <div class="trade-buttons">
@@ -247,7 +255,7 @@
             </div>
             <div class="markets-grid">
                 <div class="market-card">
-                    <div class="market-header"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/200px-Tesla_Motors.svg.png" alt="Tesla" class="market-img"><h3>Tesla & EV</h3></div>
+                    <div class="market-header"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="Tesla" class="market-img"><h3>Tesla & EV</h3></div>
                     <div class="market-list">
                         <div class="market-item"><span class="mi-symbol">TSLA</span><span class="mi-price">$412.34</span><span class="mi-change positive">+3.45%</span></div>
                         <div class="market-item"><span class="mi-symbol">RIVN</span><span class="mi-price">$12.45</span><span class="mi-change positive">+2.34%</span></div>
@@ -255,7 +263,7 @@
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin" class="market-img"><h3>Crypto</h3></div>
+                    <div class="market-header"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="Dogecoin" class="market-img"><h3>Crypto</h3></div>
                     <div class="market-list">
                         <div class="market-item"><span class="mi-symbol">DOGE</span><span class="mi-price">$0.1234</span><span class="mi-change positive">+5.67%</span></div>
                         <div class="market-item"><span class="mi-symbol">BTC</span><span class="mi-price">$67,234</span><span class="mi-change positive">+2.34%</span></div>
@@ -263,7 +271,7 @@
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/200px-SpaceX_logo_white.svg.png" alt="SpaceX" class="market-img"><h3>Space Tech</h3></div>
+                    <div class="market-header"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="SpaceX" class="market-img"><h3>Space Tech</h3></div>
                     <div class="market-list">
                         <div class="market-item"><span class="mi-symbol">SPACE</span><span class="mi-price">$156.78</span><span class="mi-change positive">+2.89%</span></div>
                         <div class="market-item"><span class="mi-symbol">BA</span><span class="mi-price">$198.45</span><span class="mi-change positive">+1.12%</span></div>
@@ -271,7 +279,7 @@
                     </div>
                 </div>
                 <div class="market-card">
-                    <div class="market-header"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" class="market-img"><h3>AI & Robotics</h3></div>
+                    <div class="market-header"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt="NVIDIA" class="market-img"><h3>AI & Robotics</h3></div>
                     <div class="market-list">
                         <div class="market-item"><span class="mi-symbol">NVDA</span><span class="mi-price">$878.90</span><span class="mi-change positive">+4.56%</span></div>
                         <div class="market-item"><span class="mi-symbol">AI</span><span class="mi-price">$45.67</span><span class="mi-change positive">+3.21%</span></div>
@@ -282,7 +290,7 @@
         </div>
     </section>
 
-    <!-- Testimonials with Real Pictures -->
+    <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -294,7 +302,7 @@
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"OptimusTrade helped me invest in Tesla early. The platform is fast, reliable, and perfect for tech enthusiasts!"</p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Musk Investor" class="author-img">
+                        <img src="https://ui-avatars.com/api/?name=MC&background=e82127&color=fff&size=100" alt="Musk Investor" class="author-img">
                         <div class="author-info"><span class="author-name">Michael Chang</span><span class="author-title">Tech Investor</span></div>
                     </div>
                 </div>
@@ -302,7 +310,7 @@
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"Finally, a trading platform that understands future tech! Dogecoin trading is seamless and the AI insights are incredible."</p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="author-img">
+                        <img src="https://ui-avatars.com/api/?name=SC&background=C2A633&color=fff&size=100" alt="Sarah Chen" class="author-img">
                         <div class="author-info"><span class="author-name">Sarah Chen</span><span class="author-title">Crypto Trader</span></div>
                     </div>
                 </div>
@@ -310,7 +318,7 @@
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"I love the space stocks section. Being able to trade aerospace companies alongside my Tesla holdings is amazing!"</p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="James Rodriguez" class="author-img">
+                        <img src="https://ui-avatars.com/api/?name=JR&background=76B900&color=fff&size=100" alt="James Rodriguez" class="author-img">
                         <div class="author-info"><span class="author-name">James Rodriguez</span><span class="author-title">Space Investor</span></div>
                     </div>
                 </div>
@@ -325,8 +333,8 @@
                 <h2 class="cta-title">Join the Future of Investing</h2>
                 <p class="cta-description">Trade alongside thousands of investors believing in Elon Musk's vision. Get started in minutes.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-lg" onclick="openModal('registerModal'); return false;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/50px-Tesla_Motors.svg.png" alt="" style="width:16px;margin-right:6px;"> Create Free Account</a>
-                    <a href="#contact" class="btn btn-outline btn-lg"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="" style="width:16px;margin-right:6px;"> Contact Sales</a>
+                    <a href="#" class="btn btn-primary btn-lg" onclick="openModal('registerModal'); return false;"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> Create Free Account</a>
+                    <a href="#contact" class="btn btn-outline btn-lg"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -340,9 +348,9 @@
                     <span class="section-tag">Get In Touch</span>
                     <h2 class="section-title">Have Questions?</h2>
                     <div class="contact-methods">
-                        <div class="contact-method"><div class="cm-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/100px-SpaceX_logo_white.svg.png" alt=""></div><div class="cm-details"><span class="cm-label">Email</span><span class="cm-value">support@optimustrade.com</span></div></div>
-                        <div class="contact-method"><div class="cm-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/100px-Nvidia_logo.svg.png" alt=""></div><div class="cm-details"><span class="cm-label">Phone</span><span class="cm-value">+1 (888) OPTIMUS</span></div></div>
-                        <div class="contact-method"><div class="cm-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/100px-Tesla_Motors.svg.png" alt=""></div><div class="cm-details"><span class="cm-label">Headquarters</span><span class="cm-value">SpaceX HQ, Hawthorne, CA</span></div></div>
+                        <div class="contact-method"><div class="cm-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></div><div class="cm-details"><span class="cm-label">Email</span><span class="cm-value">support@optimustrade.com</span></div></div>
+                        <div class="contact-method"><div class="cm-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt=""></div><div class="cm-details"><span class="cm-label">Phone</span><span class="cm-value">+1 (888) OPTIMUS</span></div></div>
+                        <div class="contact-method"><div class="cm-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></div><div class="cm-details"><span class="cm-label">Headquarters</span><span class="cm-value">SpaceX HQ, Hawthorne, CA</span></div></div>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
@@ -360,7 +368,7 @@
                             </select>
                         </div>
                         <div class="form-group"><textarea name="message" placeholder="Your Message" rows="4" required></textarea></div>
-                        <button type="submit" class="btn btn-primary btn-block"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="" style="width:16px;margin-right:6px;"> Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-block"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt="" style="width:16px;margin-right:6px;vertical-align:middle;"> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -373,26 +381,26 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <div class="footer-brand">
-                        <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/200px-SpaceX_logo_white.svg.png" alt="Logo" class="footer-logo-img"><span class="logo-text">Optimus<span class="accent">Trade</span></span></div>
+                        <div class="logo"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="Logo" class="footer-logo-img"><span class="logo-text">Optimus<span class="accent">Trade</span></span></div>
                         <p class="footer-description">Your trusted partner for Tesla, SpaceX, and future tech investing. Join the revolution to Mars!</p>
                         <div class="footer-social">
-                            <a href="#" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/50px-Tesla_Motors.svg.png" alt=""></a>
-                            <a href="#" class="social-link"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt=""></a>
-                            <a href="#" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/50px-Nvidia_logo.svg.png" alt=""></a>
-                            <a href="#" class="social-link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/50px-SpaceX_logo_white.svg.png" alt=""></a>
-                            <a href="#" class="social-link"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt=""></a>
+                            <a href="#" class="social-link"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></a>
+                            <a href="#" class="social-link"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23C2A633'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E" alt=""></a>
+                            <a href="#" class="social-link"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt=""></a>
+                            <a href="#" class="social-link"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt=""></a>
+                            <a href="#" class="social-link"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F7931A'/%3E%3Ctext x='50' y='65' font-size='35' text-anchor='middle' fill='white' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E" alt=""></a>
                         </div>
                     </div>
                     <div class="footer-links">
                         <div class="footer-column"><h4>Trading</h4><ul><li><a href="#">Tesla Stocks</a></li><li><a href="#">Dogecoin</a></li><li><a href="#">Space Stocks</a></li><li><a href="#">AI & Robotics</a></li></ul></div>
                         <div class="footer-column"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Contact</a></li></ul></div>
                         <div class="footer-column"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">FAQs</a></li><li><a href="#">Security</a></li><li><a href="#">API</a></li></ul></div>
-<div class="footer-column"><h4>Legal</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Risk Disclosure</a></li></ul></div>
+                        <div class="footer-column"><h4>Legal</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Risk Disclosure</a></li></ul></div>
                     </div>
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-legal"><p>&copy; 2024 OptimusTrade. All rights reserved.</p></div>
-                    <div class="footer-badges"><span class="badge"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nvidia_logo.svg/30px-Nvidia_logo.svg.png" alt="" style="width:14px;margin-right:6px;"> SSL Secured</span><span class="badge"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SpaceX_logo_white.svg/30px-SpaceX_logo_white.svg.png" alt="" style="width:14px;margin-right:6px;"> Regulated</span></div>
+                    <div class="footer-badges"><span class="badge"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2376B900' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-weight='bold'%3ENV%3C/text%3E%3C/svg%3E" alt="" style="width:14px;margin-right:6px;vertical-align:middle;"> SSL Secured</span><span class="badge"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23e82127'/%3E%3Cpath d='M30 70 L50 30 L70 70 L50 60 Z' fill='white'/%3E%3C/svg%3E" alt="" style="width:14px;margin-right:6px;vertical-align:middle;"> Regulated</span></div>
                 </div>
             </div>
         </div>
